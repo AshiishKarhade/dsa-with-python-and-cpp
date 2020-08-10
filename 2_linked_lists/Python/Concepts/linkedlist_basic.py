@@ -1,3 +1,15 @@
+# // add last
+# // add first
+# // remove first
+# // remove last
+# // size()
+
+# //PROBLEMS
+# // converting linked list to arrays
+# // reversing linked list
+# // kth node from end
+
+
 class Node:
     def __init__(self, value):
         self.value = value

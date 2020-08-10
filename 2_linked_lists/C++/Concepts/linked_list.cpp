@@ -1,6 +1,17 @@
 #include <iostream>
 using namespace std;
 
+// add last
+// add first
+// remove first
+// remove last
+// size()
+
+//PROBLEMS
+// converting linked list to arrays
+// reversing linked list
+// kth node from end
+
 class Node{
     public:
     int value;
