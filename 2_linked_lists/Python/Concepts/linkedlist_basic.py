@@ -34,12 +34,22 @@ class SinglyLinkedList:
         while(temp != None):
             print(temp.value, end=" ")
             temp = temp.next
-        print()
+        
+    
+    def add_first(self, value):
+        temp = Node(value)
+        if self.head==None:
+            self.head = temp
+            self.tail = temp
+        else:
+            temp.next = self.head
+            self.head = temp
 
 if __name__ == "__main__":
     sll = SinglyLinkedList()
-    sll.add_last(5)
+    #sll.add_last(5)
     sll.add_last(10)
     sll.add_last(15)
+    sll.add_first(5)
 
     sll.print()
