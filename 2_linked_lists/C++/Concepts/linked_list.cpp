@@ -73,6 +73,25 @@ class SinglyLinkedList{
             head = head->next;
         }
     }
+
+    void remove_last(){
+        if(head==NULL){
+            return;
+        }
+        else{
+            if(tail==head){
+                remove_first();
+            }
+            else{
+                Node* temp = head;
+                while(temp->next->next != NULL){
+                    temp = temp->next;
+                }
+                tail = temp;
+                tail->next = NULL;
+            }
+        }
+    }
 };
 
 int main(){
@@ -81,9 +100,12 @@ int main(){
     sll.add_last(10);
     sll.add_last(15);
     sll.add_first(5);
+    sll.add_last(20);
+    sll.add_last(25);
 
-    sll.remove_first();
-
+    sll.print();
+    cout << "\n";
+    sll.remove_last();
     sll.print();
 
     return 0;
