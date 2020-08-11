@@ -49,14 +49,29 @@ class SinglyLinkedList{
             temp = temp->next; 
         }
     }
+
+    void add_first(int value){
+        Node* temp = new Node();
+        temp->value = value;
+        temp->next = NULL;
+
+        if(head==NULL){
+            head = temp;
+            tail = temp;
+        }
+        else{
+            temp->next = head;
+            head = temp;
+        }
+    }
 };
 
 int main(){
 
     SinglyLinkedList sll;
-    sll.add_last(5);
     sll.add_last(10);
     sll.add_last(15);
+    sll.add_first(5);
 
     sll.print();
 
