@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 // add last
@@ -48,6 +49,16 @@ class SinglyLinkedList{
             cout << temp->value << " ";
             temp = temp->next; 
         }
+    }
+
+    int size(){
+        int count = 0;
+        Node* temp = head;
+        while(temp != NULL){
+            temp = temp->next;
+            count++;
+        }
+        return count;
     }
 
     void add_first(int value){
@@ -104,9 +115,11 @@ int main(){
     sll.add_last(25);
 
     sll.print();
+    cout << "\nSize: " + to_string(sll.size()) << "\n";
     cout << "\n";
     sll.remove_last();
     sll.print();
+    cout << "\nSize: " + to_string(sll.size()) << "\n";
 
     return 0;
 }
