@@ -67,22 +67,6 @@ class SinglyLinkedList{
         head = prev;
     }
 
-    void reverse(){
-        auto previous = head;
-        auto current = head->next;
-
-        while(current != NULL){
-            auto next = current->next;
-            current->next = previous;
-            previous = current;
-            current = next;
-        }
-        tail = head;
-        tail->next = NULL;
-        head = previous;
-
-    }
-
 };
 
 int main(){
