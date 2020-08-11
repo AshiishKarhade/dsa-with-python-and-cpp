@@ -26,6 +26,16 @@ class SinglyLinkedList:
             temp = temp.next
         print()
 
+    def kthNode(self, k):
+        first = self.head
+        second = self.head
+        for i in range(k):
+            second = second.next
+        while(second != None):
+            first = first.next
+            second = second.next
+        return first.value
+
 
 
 if __name__ == "__main__":
@@ -34,5 +44,8 @@ if __name__ == "__main__":
     sll.add_last(10)
     sll.add_last(15)
     sll.add_last(20)
-
+    sll.add_last(25)
+    sll.print()
+    key = int(input("Enter key: "))
+    print(sll.kthNode(key))
 
