@@ -63,6 +63,13 @@ class SinglyLinkedList:
             self.tail = temp
             self.tail.next = None
 
+    def size(self):
+        temp = self.head
+        count = 0
+        while temp != None:
+            temp = temp.next
+            count += 1
+        return count
 
 if __name__ == "__main__":
     sll = SinglyLinkedList()
@@ -72,7 +79,9 @@ if __name__ == "__main__":
     sll.add_first(5)
 
     sll.print()
+    print(f"\nSize: {sll.size()}")
     print()
     sll.remove_last()
     sll.print()
+    print(f"\nSize: {sll.size()}")
     print()
