@@ -45,6 +45,12 @@ class SinglyLinkedList:
             temp.next = self.head
             self.head = temp
 
+    def remove_first(self):
+        if self.head == None:
+            return
+        else:
+            self.head = self.head.next
+
 if __name__ == "__main__":
     sll = SinglyLinkedList()
     #sll.add_last(5)
@@ -53,3 +59,7 @@ if __name__ == "__main__":
     sll.add_first(5)
 
     sll.print()
+    print()
+    sll.remove_first()
+    sll.print()
+    print()
