@@ -64,6 +64,15 @@ class SinglyLinkedList{
             head = temp;
         }
     }
+
+    void remove_first(){
+        if (head == NULL){
+            return;
+        }
+        else{
+            head = head->next;
+        }
+    }
 };
 
 int main(){
@@ -72,6 +81,8 @@ int main(){
     sll.add_last(10);
     sll.add_last(15);
     sll.add_first(5);
+
+    sll.remove_first();
 
     sll.print();
 
