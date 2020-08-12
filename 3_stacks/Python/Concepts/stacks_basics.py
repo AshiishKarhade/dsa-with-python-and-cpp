@@ -8,36 +8,47 @@ class Stacks:
         self.top = None
         self.size = 0
     
-    def push(value):
-        temp = Node(value)
-        if top == None:
-            top = temp
+    def push(self, val):
+        temp = Node(val)
+        if self.top == None:
+            self.top = temp
             self.size = 1
         else:
             temp.next = self.top
             self.top = temp
             self.size += 1
     
-    def peek():
-        if top != None:
+    def peek(self):
+        if self.top != None:
             return self.top.value
         else:
             return 0
 
-    def pop():
+    def pop(self):
         last = self.peek()
-        if top == None:
+        if self.top == None:
             return
         else:
             self.top = self.top.next
             self.size -= 1
         return last
     
-    def is_empty():
+    def is_empty(self):
         if self.peek() <= 0:
             return True
         else:
             return False
 
-if __name__ == "__main":
-    pass
+    def print(self):
+        temp = self.top
+        while(temp != None):
+            print(temp.value, end=" ")
+            temp = temp.next
+        print()
+        
+
+if __name__ == "__main__":
+    st = Stacks()
+    st.push(5)
+    st.push(10)
+    st.print()
