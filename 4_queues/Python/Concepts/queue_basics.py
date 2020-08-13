@@ -21,8 +21,21 @@ class Queue:
             self.back.next = temp
             self.back = self.back.next
             self.size += 1
-    
-     
+
+    def pop(self):
+        if self.front = None:
+            return
+        else:
+            last = self.front.value
+            self.front = self.front.next
+            return last
+
+if __name == "__main__":
+    q = Queue()
+    q.push(5)
+    q.push(10)
+    q.push(15)
+    q.push(20)
             
 
 
