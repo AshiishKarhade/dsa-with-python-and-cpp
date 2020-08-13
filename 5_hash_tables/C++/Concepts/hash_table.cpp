@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <list>
 using namespace std;
 
 //put(k,v)
@@ -43,15 +44,15 @@ class HashTable{
 
     void get(int key){
         int idx = hash_func(key);
-        int v = table[idx];
-        cout << v << "\n";
+        auto v = table.at(idx);
+        cout << v.value << "\n";
     }
 };
 
 
 int main(){
     vector<Node> v;
-    Node n1 =  Node(1, "ashish");
-    v.push_back(n1);
+    list <Node> l;
+
     return 0;
 }
