@@ -53,6 +53,12 @@ class BST{
     void pre_order_traversal(){
         pre_order_traversal(root);
     }
+    void in_order_traversal(){
+        in_order_traversal(root);
+    }
+    void post_order_traversal(){
+        post_order_traversal(root);
+    }
 
     void pre_order_traversal(Node* root){
         if(root == NULL){
@@ -62,6 +68,24 @@ class BST{
         pre_order_traversal(root->left);
         pre_order_traversal(root->right);
     } 
+
+    void in_order_traversal(Node* root){
+        if(root == NULL){
+            return;
+        }
+        in_order_traversal(root->left);
+        cout << root->data << " ";
+        in_order_traversal(root->right);
+    }
+
+    void post_order_traversal(Node* root){
+        if(root == NULL){
+            return;
+        }
+        post_order_traversal(root->left);
+        post_order_traversal(root->right);
+        cout << root->data << " ";
+    }
 };
 
 int main(){
@@ -72,6 +96,11 @@ int main(){
     bst.insert(4);
 
     bst.pre_order_traversal();
+    cout << "\n";
+    bst.in_order_traversal();
+    cout << "\n";
+    bst.post_order_traversal();
+    cout << "\n";
 
     return 0;
 }
