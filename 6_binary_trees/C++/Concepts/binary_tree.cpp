@@ -50,8 +50,20 @@ class BST{
         }
     }
 
-    void find(int val){
-
+    bool find(int val){
+        Node* current = root;
+        while(current != NULL){
+            if (val < current->data){
+                current = current->left;
+            }
+            else if(val > current->data){
+                current = current->right;
+            }
+            else{
+                return true;
+            }
+        }
+        return false;
     }
 };
 
@@ -61,6 +73,8 @@ int main(){
     bst.insert(6);
     bst.insert(9);
     bst.insert(4);
+
+    cout << bst.find(9) << "\n";
 
     return 0;
 }
