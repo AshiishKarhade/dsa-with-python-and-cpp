@@ -27,6 +27,17 @@ class BST:
                     break
                 current = current.right
 
+    def find(self, value):
+        current = self.root
+        while(current != None):
+            if value < current.value:
+                current = current.left
+            elif value > current.value:
+                current = current.right
+            else:
+                return True
+        return False
+
 
 if __name__ == "__main__":
     bst = BST(7)
@@ -38,3 +49,6 @@ if __name__ == "__main__":
     print(bst.root.left.value)
     print(bst.root.right.value)
     print(bst.root.left.right.value)
+
+    print(bst.find(5))
+    print(bst.find(23))
