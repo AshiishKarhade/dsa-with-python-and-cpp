@@ -1,7 +1,7 @@
 # DSA with Python & C++
 
 * Linear Data Structures
-1. (Arrays)[https://github.com/AshiishKarhade/dsa-with-python-and-cpp/tree/master/1.%20Arrays]
+1. [Arrays](https://github.com/AshiishKarhade/dsa-with-python-and-cpp/tree/master/1.%20Arrays)
 2. Linked Lists
 3. Stacks
 4. Queues
