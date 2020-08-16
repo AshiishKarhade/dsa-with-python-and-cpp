@@ -6,6 +6,7 @@ class Node{
     int value;
     Node* left;
     Node* right;
+    int height;
     Node(int value){
         this->value = value;
         this->left = NULL;
@@ -39,7 +40,17 @@ class AVLTree{
         else {
             root->right = insert(root->right, value);
         }
+        root->height = max(root->left, root->right) + 1;
         return root;
+    } 
+
+    int height(Node* node){
+        if (node == NULL){
+            return -1;
+        }
+        else{
+            return node->height;
+        }
     }
 
 };
