@@ -9,7 +9,7 @@
 
 ### * Non-linear Data Structures
 1. [Binary Trees & Binary Search Trees](https://github.com/AshiishKarhade/dsa-with-python-and-cpp/tree/master/6_binary_trees)
-2. AVL Trees
+2. [AVL Trees](https://github.com/AshiishKarhade/dsa-with-python-and-cpp/tree/master/7_avl_trees)
 3. Heaps
 4. Tries
 5. Graphs
