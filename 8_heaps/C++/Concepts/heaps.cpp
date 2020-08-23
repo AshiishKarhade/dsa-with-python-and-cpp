@@ -38,6 +38,30 @@ class Heap{
         items[second] = temp;
     }
     //remove() root node
+    void remove(){
+        if (size==0){
+            cout << "Heap Empty" << "\n";
+            return;
+        }
+        // removes the root node and does the adjustments
+        items[0] = items[--size];
+        // item(root) < childer
+        int idx = 0;
+        while(idx <= size && !isValid_parent(idx)){
+            int left = left_child(idx);
+            int right = right_child(idx);
+            int larger_child_idx = (left > right) ? left : right;  
+        }
+    }
+    bool isValid_parent(int index){
+        return items[index] >= items[left_child(index)] && items[index] >= items[right_child(index)]
+    }
+    int left_child(int index){
+        return (index*2)+1;
+    }
+    int right_child(int index){
+        return (index*2)+2;
+    }
 };
 
 int main(){
@@ -45,9 +69,10 @@ int main(){
     Heap hp;
     hp.insert(10);
     hp.insert(15);
+    hp.insert(30);
     hp.insert(20);
     hp.insert(25);
-    hp.insert(30);
+
 
 
     return 0;
