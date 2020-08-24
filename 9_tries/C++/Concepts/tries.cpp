@@ -35,6 +35,22 @@ class Trie{
         current->isEndofWord = true;
     }
 
+    bool contains(string word){
+        if(word.length() < 1){
+            return ;
+        }
+
+        Node* current = root;
+        for(int i=0; i<word.length(); i++){
+            char ch = word[i];
+            if(current->children.find(ch)->second == NULL){
+                return false;
+            }
+            current = current->children[ch];
+        }
+        return current->isEndofWord;
+    }
+
 };
 
 int main(){
