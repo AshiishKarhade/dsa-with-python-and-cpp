@@ -20,14 +20,25 @@ class Trie{
         root = new Node(' ');
     }
 
-    void insert(char ch){
-        Node n = Node(ch);
-
+    void insert(string word){
+        Node* current = root;
+        for(int i=0; i<word.length(); i++){
+            char ch = word[i];
+            int idx = ch - 'a';
+            //cout << idx << endl;
+            if(current->childs[idx] == NULL){
+                current->childs[idx] = new Node(ch);
+            }
+            current = current->childs[idx];
+        }
+        current->isEndofWord = true;
     }
 };
 
 int main(){
 
+    Trie trie;
+    trie.insert("ashish");
 
     return 0;
 }
