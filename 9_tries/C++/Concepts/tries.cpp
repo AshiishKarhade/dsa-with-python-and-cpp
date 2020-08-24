@@ -1,14 +1,15 @@
 #include <iostream>
+#include <map>
 using namespace std;
 
 class Node{
     public:
     char value;
-    Node* childs[26];
+    map<char, Node*> children;
     bool isEndofWord;
     Node(char value){
         this->value = value;
-        this->isEndofWord = true;
+        this->isEndofWord = false;
     }
 };
 
@@ -24,15 +25,16 @@ class Trie{
         Node* current = root;
         for(int i=0; i<word.length(); i++){
             char ch = word[i];
-            int idx = ch - 'a';
+            //int idx = ch - 'a';
             //cout << idx << endl;
-            if(current->childs[idx] == NULL){
-                current->childs[idx] = new Node(ch);
+            if(current->children.find(ch) == current->children.end()){
+                current->children[ch] = new Node(ch);
             }
-            current = current->childs[idx];
+            current = current->children[ch];
         }
         current->isEndofWord = true;
     }
+
 };
 
 int main(){
