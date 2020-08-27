@@ -1,47 +1,36 @@
 #include <iostream>
 #include <string>
+#include <stack>
 using namespace std;
 
 
-class Palindrome{
+class StringReverse{
     public:
     string s1;
+    stack <char> stk;
     
-    Palindrome(string s1){
+    StringReverse(string s1){
         this->s1 = s1;
     }
 
-    bool isPalindrome(string s, int first, int last){
-        // BASE CASE
-        if(first>=last){
-            return true;
+    void reverse(){
+        for(int i=0; i<s1.length(); i++){
+            stk.push(s1[i]);
         }
-        char first_char = s[first];
-        char last_char = s[last];
-        //cout << first_char << last_char << ";";
-        return (first_char==last_char) && isPalindrome(s, ++first, --last);
-    }
-
-    bool isPalindrome(string s){
-        int l = 0;
-        int r = s.length()-1;
-        return isPalindrome(s, l, r);
-    }
-
-    void print(){
-        if(isPalindrome(s1)){
-                cout << "Palindrome"<< "\n";
-            }
-        else{
-            cout << "Not Palindrome" << "\n";
+        string reversed;
+        while(!stk.empty()){
+            char p = stk.top();
+            stk.pop();
+            reversed = reversed + p;
         }
+        cout << reversed << "\n";
     }
 };
 
 int main(){
 
-    Palindrome s1 = Palindrome("ashiihsa");
-    s1.print();
+    StringReverse sr = StringReverse("ashiish");
+    sr.reverse();
 
     return 0;
 }
