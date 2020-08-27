@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main(){
@@ -7,8 +8,9 @@ int main(){
     char vowels[] = {'a', 'e', 'i', 'o', 'u'};
     s1 = "aieou";
 
+    // conversion from uppercase to lowercase with remove edge cases as well
     int no_of_vowels = 0;
-    for(int i=0; i<5; i++){
+    for(int i=0; i<5; i++){ 
         for(int j=0; j<s1.length(); j++){
             if(vowels[i] == s1[j]){
                 no_of_vowels += 1;
