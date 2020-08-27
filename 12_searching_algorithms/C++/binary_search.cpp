@@ -2,26 +2,37 @@
 #include <vector>
 using namespace std;
 
-int binary_sort(){
+int binary_search(int arr[], int key, int left, int right){
+    int mid = (left+right)/2;
+    
+    if(right <= left){
+        return -1;
+    }
 
+    if(arr[mid] == key){
+        return mid;
+    }
+
+    if(key < arr[mid]){
+        return binary_search(arr, key, left, mid);
+    }
+    else{
+        return binary_search(arr, key, mid+1, right);
+    }
+}
+
+void print(int index){
+    if(index<0){
+        cout << "Key is not present" << "\n";
+    }
+    else{
+        cout << "Key is present at: " << index << "\n";
+    }
 }
 
 int main(){
-    vector <int> arr;
-    arr.push_back(24);
-    arr.push_back(34);
-    arr.push_back(12);
-    arr.push_back(65);
-    arr.push_back(83);
-    arr.push_back(27);
-    arr.push_back(67);
-    arr.push_back(02);
-    int index = linear_search(arr, 12);
-    print(index);
-
-    int index2 = linear_search(arr, 1222);
-    print(index2);
-    return 0;
-
+    int arr[] = {12, 23, 35, 46, 57, 69, 82, 92};
+    int idx = binary_search(arr, 35, 0, 7);
+    print(idx);
     return 0;
 }
